@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        /*最外层容器样式*/
+        .wrap {
+            width: 400px;
+            height: 400px;
+            margin: 40% 29%;
+            position: relative;
+        }
+
+        /*包裹所有容器样式*/
+        .cube {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(-80deg);
+            animation: rotate linear 20s infinite;
+        }
+
+        @-webkit-keyframes rotate {
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        .cube div {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            opacity: 0.8;
+            transition: all .4s;
+        }
+
+        /*定义所有图片样式*/
+        .pic {
+            width: 400px;
+            height: 400px;
+        }
+
+        .cube .out_front {
+            transform: rotateY(0deg) translateZ(200px);
+        }
+
+        .cube .out_back {
+            transform: translateZ(-200px) rotateY(180deg);
+        }
+
+        .cube .out_left {
+            transform: rotateY(-90deg) translateZ(200px);
+        }
+
+        .cube .out_right {
+            transform: rotateY(90deg) translateZ(200px);
+        }
+
+        .cube .out_top {
+            transform: rotateX(90deg) translateZ(200px);
+        }
+
+        .cube .out_bottom {
+            transform: rotateX(-90deg) translateZ(200px);
+        }
+
+        /*定义小正方体样式*/
+        .cube span {
+            display: block;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+
+        .cube .in_pic {
+            width: 200px;
+            height: 200px;
+        }
+
+        .cube .in_front {
+            transform: rotateY(0deg) translateZ(100px);
+        }
+
+        .cube .in_back {
+            transform: translateZ(-100px) rotateY(180deg);
+        }
+
+        .cube .in_left {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        .cube .in_right {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .cube .in_top {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .cube .in_bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        /*鼠标移入后样式*/
+        .cube:hover .out_front {
+            transform: rotateY(0deg) translateZ(400px);
+        }
+
+        .cube:hover .out_back {
+            transform: translateZ(-400px) rotateY(180deg);
+        }
+
+        .cube:hover .out_left {
+            transform: rotateY(-90deg) translateZ(400px);
+        }
+
+        .cube:hover .out_right {
+            transform: rotateY(90deg) translateZ(400px);
+        }
+
+        .cube:hover .out_top {
+            transform: rotateX(90deg) translateZ(400px);
+        }
+
+        .cube:hover .out_bottom {
+            transform: rotateX(-90deg) translateZ(400px);
+		}
+		
+		.love{
+			color: #fff; 
+			text-shadow:
+			0 0 3px rgba(229,0,245,1),
+			0 0 6px rgba(229,0,245,0.9),
+			0 0 8px rgba(229,0,245,0.9),
+			0 0 14px rgba(229,0,245,0.9),
+			0 0 22px rgba(229,0,245,0.7),
+			0 0 28px rgba(229,0,245,0.7),
+			0 0 36px rgba(229,0,245,0.6),
+			0 0 48px rgba(229,0,245,0.5),
+			0 0 54px rgba(229,0,245,0.3),
+			0 0 68px rgba(229,0,245,0.1);
+		}
+		
+		.tantan img {
+            animation: myfirst 2s infinite;
+			-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(#00000061), to(rgba(250, 250, 250, 0.1)));
+        }
+		@keyframes myfirst {
+            0% {
+                transform: translate(0px, 0px);
+            }
+            50% {
+                transform: translate(0px, 30px);
+            }
+            100% {
+                transform: translate(0px, 0px);
+            }
+		}
+    </style>
+</head>
+
+<body>
+	<div style="position: absolute; z-index: -1; top: 0px; left: 0px; bottom: 0px; right: 0px;  background-size: cover; background-color: transparent; background-repeat: no-repeat; background-position: 0% 50%; background-image: none;">
+		<!--overflow: hidden;<video autoplay loop muted style="object-fit:fill;margin: auto; position: absolute; z-index: -1; top: 0; left: 0; visibility: visible; opacity: 0.8; width: 100%; height: 100%;">
+			<source src="source/20190811_171320.mp4" type="video/mp4">
+		</video>-->
+		<img src="source/123.png" style="width: 100%; height: 200%;"/>
+	</div>
+
+    <!-- 外层最大容器 -->
+    <div class="wrap">
+        <!--包裹所有元素的容器-->
+        <div class="cube">
+            <!--前面图片 -->
+            <div class="out_front">
+                <img src="http://img.blog.csdn.net/20170716094246620" class="pic" />
+            </div>
+            <!--后面图片 -->
+            <div class="out_back">
+                <img src="http://img.blog.csdn.net/20170716094334594" class="pic" />
+            </div>
+            <!--左面图片 -->
+            <div class="out_left">
+                <img src="http://img.blog.csdn.net/20170716094400013" class="pic" />
+            </div>
+            <!--右面图片 -->
+            <div class="out_right">
+                <img src="http://img.blog.csdn.net/20170716094422331" class="pic" />
+            </div>
+            <!--上面图片 -->
+            <div class="out_top">
+                <img src="http://img.blog.csdn.net/20170716094444434" class="pic" />
+            </div>
+            <!--下面图片 -->
+            <div class="out_bottom">
+                <img src="http://img.blog.csdn.net/20170716094504432" class="pic" />
+            </div>
+
+            <!--小正方体 -->
+            <span class="in_front">
+                <img src="http://img.blog.csdn.net/20170716120759718" class="in_pic" />
+            </span>
+            <span class="in_back">
+                 <img src="http://img.blog.csdn.net/20170716120759718" class="in_pic" />
+            </span>
+            <span class="in_left">
+                <img src="http://img.blog.csdn.net/20170716120759718" class="in_pic" />
+            </span>
+            <span class="in_right">
+                <img src="http://img.blog.csdn.net/20170716120759718" class="in_pic" />
+            </span>
+            <span class="in_top">
+                <img src="http://img.blog.csdn.net/20170716120759718" class="in_pic" />
+            </span>
+            <span class="in_bottom">
+                <img src="http://img.blog.csdn.net/20170716120759718" class="in_pic" />
+            </span>
+        </div>
+
+    </div>
+	<!--<div class="love" style="font-size: 66px; text-align: center; padding-top: 100px;">
+		吖&emsp;吖<br>
+		<b style="font-size: 100px;font-style: italic;" class="tantan">
+			I&nbsp;&nbsp;<img src="source/love.png"/>&nbsp;U
+		</b>
+	</div>-->
+</body>
+
+</html>
